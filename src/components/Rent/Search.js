@@ -14,13 +14,13 @@ function Search(props) {
   });
 
   const fetchPrice = () => {
-    axios.get("http://localhost:3001/prices").then((res) => {
+    axios.get("/prices").then((res) => {
       setPrices(res.data);
     });
   };
 
   const fetchPropertyTypes = () => {
-    axios.get("http://localhost:3001/property-types").then((res) => {
+    axios.get("/property-types").then((res) => {
       setPropertyType(res.data);
     });
   };
