@@ -9,14 +9,14 @@ function Favourites(props) {
 
   const removeFromFav = (id) => {
     axios
-      .patch("/houses" + id, { favourite: false })
+      .patch("/houses/" + id, { favourite: false })
       .then((res) => {
         setFavFlag(!favFlag);
       });
   };
 
   const fetchData = () => {
-    axios.get("/houses").then((res) => {
+    axios.get("/houses/").then((res) => {
       setDb(res.data);
     });
   };

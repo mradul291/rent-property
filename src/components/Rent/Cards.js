@@ -13,7 +13,7 @@ function Cards(props) {
   const [favFlag, setFavFlag] = useState(false);
 
   const fetchData = () => {
-    axios.get("/houses").then((res) => {
+    axios.get("/houses/").then((res) => {
       setDb(res.data);
       setDbFiltered(res.data);
     });
@@ -29,7 +29,7 @@ function Cards(props) {
 
   const addToFav = (id) => {
     axios
-      .patch("/houses" + id, { favourite: true })
+      .patch("/houses/" + id, { favourite: true })
       .then((res) => {
         setFavFlag(!favFlag);
       });
@@ -37,7 +37,7 @@ function Cards(props) {
 
   const removeFromFav = (id) => {
     axios
-      .patch("/houses" + id, { favourite: false })
+      .patch("/houses/" + id, { favourite: false })
       .then((res) => {
         setFavFlag(!favFlag);
       });
